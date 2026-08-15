@@ -1,17 +1,17 @@
-name: Build Kivy APK
+名称: 构建 Kivy APK
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+：ubuntu-latest
+    步骤:
+    - 使用: actions/checkout@v4
     
     - name: 设置 Python 环境
-      uses: actions/setup-python@v4
+      使用: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        Python 版本: '3.9'
         
     - name: 安装系统编译依赖
       run: |
@@ -22,12 +22,12 @@ jobs:
       run: |
         pip install --upgrade cython virtualenv buildozer
         
-    - name: 开始编译 APK
+    - 名称: 开始编译 APK
       run: |
-        buildozer android debug
+        buildozer 安卓 调试
         
-    - name: 上传编译好的 APK
-      uses: actions/upload-artifact@v3
+    - 名称: 上传编译好的 APK
+      使用: actions/upload-artifact@v3
       with:
-        name: Omphalos-APK
-        path: bin/*.apk
+        名称: Omphalos-APK
+        路径: bin/*.apk
