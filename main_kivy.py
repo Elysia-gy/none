@@ -1,31 +1,31 @@
 # main_kivy.py
-from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.scrollview import ScrollView
-from kivy.clock import Clock
-from kivy.core.window import Window
-import threading
-import sys
-import io
+从 kivy.app 导入 App
+从 kivy.uix.boxlayout 导入 BoxLayout
+从 kivy.uix.button 导入 Button
+从 kivy.uix.label 导入 Label
+从 kivy..scrollview 导入 ScrollView
+从 kivy.clock 导入 Clock
+从 kivy.core.window 导入 Window
+导入线程模块
+导入系统模块
+导入输入输出模块
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 from game_controller import GameController
 
-class GameUI(BoxLayout):
+类GameUI(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(orientation='vertical', **kwargs)
         
         # 日志显示区域（可滚动）
         self.log_label = Label(
             text="点击「下一轮」开始游戏",
-            size_hint_y=None,
+            宽高比_y=无,
             halign='left', 
             valign='top',
-            font_name='Roboto',          
-            font_size='14sp',              # 调整字号
+            字体名称=‘msyhl.ttc’,          
+            字号='14sp',              # 调整字号
             text_size=(380, None)          # 【解决换行】：窗口宽400，留出边距，遇到380像素自动换行
         )
         self.log_label.bind(texture_size=self.log_label.setter('size'))
@@ -42,7 +42,7 @@ class GameUI(BoxLayout):
         btn_layout.add_widget(self.next_btn)
         self.add_widget(btn_layout)
 
-        self.controller = None
+        自我。控制器 = 无
         self.running = False
         self.start_game()
 
