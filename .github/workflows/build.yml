@@ -21,7 +21,11 @@ jobs:
       - name: Install build tools
         run: |
           pip install --upgrade cython virtualenv buildozer
-
+          
+      - name: 自动静默接受 Android SDK 许可协议
+        run: |
+          yes | sdkmanager --licenses || true
+          
       - name: Build APK
         run: |
           buildozer android debug
