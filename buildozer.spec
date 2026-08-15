@@ -225,6 +225,7 @@ android.archs = arm64-v8a, armeabi-v7a
 source.include_exts = py,png,jpg,kv,atlas,ttf,ttc,txt
 android.accept_sdk_license = True
 android.build_tools = 34.0.0
+
 # (int) overrides automatic versionCode computation
 # android.numeric_version = 1
 
