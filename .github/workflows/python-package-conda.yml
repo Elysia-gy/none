@@ -1,4 +1,4 @@
-name: 翁法罗斯 APK
+name: Build Kivy APK
 
 on: [push]
 
