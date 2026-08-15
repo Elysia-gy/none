@@ -306,3 +306,7 @@ warn_on_root = 1
 
 # (str) Path to build output (i.e. .apk, .aab, .ipa) storage
 # bin_dir = ./bin
+# 自动接受 Android SDK 的许可协议（解决云端打包失败的根源）
+android.accept_sdk_license = True
+# 指定一个较稳定的 Build-Tools 版本（避免依赖冲突）
+android.build_tools = 34.0.0
