@@ -222,7 +222,9 @@ android.entrypoint = org.kivy.android.PythonActivity
 
 # (list) The Android archs to build for
 android.archs = arm64-v8a, armeabi-v7a
-
+source.include_exts = py,png,jpg,kv,atlas,ttf,ttc,txt
+android.accept_sdk_license = True
+android.build_tools = 34.0.0
 # (int) overrides automatic versionCode computation
 # android.numeric_version = 1
 
@@ -306,7 +308,3 @@ warn_on_root = 1
 
 # (str) Path to build output (i.e. .apk, .aab, .ipa) storage
 # bin_dir = ./bin
-# 自动接受 Android SDK 的许可协议（解决云端打包失败的根源）
-android.accept_sdk_license = True
-# 指定一个较稳定的 Build-Tools 版本（避免依赖冲突）
-android.build_tools = 34.0.0
