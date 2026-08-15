@@ -14,7 +14,7 @@ osx.kivy_version = 2.2.0
 android.permissions = android.permission.INTERNET
 
 # (核心修复：锁定 NDK 为 23b，绝对能绕过 r28c 的报错)
-android.ndk = 23b
+android.ndk = 25c
 # (配合 NDK 23b 使用的 API 版本)
 android.ndk_api = 21
 
