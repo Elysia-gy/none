@@ -1,33 +1,33 @@
-名称: 构建 Kivy APK
+name: 构建 Kivy APK
 
 on: [push]
 
-jobs:
-  build:
+作业:
+ 构建:
 ：ubuntu-latest
     步骤:
-    - 使用: actions/checkout@v4
-    
-    - name: 设置 Python 环境
-      使用: actions/setup-python@v4
-      with:
-        Python 版本: '3.9'
-        
-    - name: 安装系统编译依赖
-      run: |
-        sudo apt update
-        sudo apt install -y zip unzip build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
-        
-    - name: 安装打包工具
-      run: |
-        pip install --upgrade cython virtualenv buildozer
-        
-    - 名称: 开始编译 APK
-      run: |
-        buildozer 安卓 调试
-        
-    - 名称: 上传编译好的 APK
-      使用: actions/upload-artifact@v3
-      with:
-        名称: Omphalos-APK
-        路径: bin/*.apk
+      - uses: actions/checkout@v4
+
+      - 名称: 设置 Python 环境
+        使用: actions/setup-python@v5
+        with:
+          Python 版本: '3.9'
+
+      - 名称: 安装系统编译依赖
+        运行: |
+          sudo apt update
+          sudo apt install -y zip unzip build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
+
+      - 名称: 安装打包工具
+        运行: |
+          pip install --upgrade cython virtualenv buildozer
+
+      - 名称: 开始编译 APK
+        运行: |
+          buildozer 安卓 调试
+
+      - name: 上传编译好的 APK
+        uses: actions/upload-artifact@v4
+        with:
+名称: O姆法洛斯-APK
+          路径: bin/*.apk
